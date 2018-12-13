@@ -34,7 +34,6 @@ public class RegistrationController {
         return modelAndView;
     }
 
-
     @RequestMapping(value="/registration", method = RequestMethod.GET)
     public ModelAndView registration(){
         ModelAndView modelAndView = new ModelAndView();
@@ -48,11 +47,18 @@ public class RegistrationController {
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView createNewUser(@Valid @ModelAttribute(value = "user") User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
-        User userExists = userService.findUserByEmail(user.getEmail());
-        if (userExists != null) {
+        User userMailExists = userService.findUserByEmail(user.getEmail());
+        User userUsernameExists = userService.findUserByUsername(user.getUsername());
+        
+        if (userMailExists != null) {
             bindingResult
                     .rejectValue("email", "error.user",
                             "There is already a user registered with the email provided");
+        }
+        if(userUsernameExists != null){
+            bindingResult
+                .rejectValue("username", "error.user",
+                    "There is already a user registered with the username provided");
         }
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("registration");
