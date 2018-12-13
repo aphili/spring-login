@@ -5,18 +5,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String password;
-	private String username;
 
+	@NotEmpty(message = "*Please provide a firstname")
+    private String firstname;
+	
+	@NotEmpty(message = "*Please provide a lastname")
+    private String lastname;
+
+	@Email(message = "*Please provide a valid Email")
+	@NotEmpty(message = "*Please provide an email")
+    private String email;
+
+	@NotEmpty(message = "*Please provide a password")
+    private String password;
+
+	@NotEmpty(message = "*Please provide a username")
+	private String username;
+	
+	private int active;
 
 	public Long getId() {
 		return id;
@@ -64,6 +79,14 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
 	}
 
 }

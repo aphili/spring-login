@@ -1,0 +1,9 @@
+com/example/springlogin/SpringLoginApplication.class
+com/example/springlogin/configuration/WebSecurityConfig.class
+com/example/springlogin/service/UserService.class
+com/example/springlogin/configuration/MvcConfig.class
+com/example/springlogin/model/Role.class
+com/example/springlogin/controller/RegistrationController.class
+com/example/springlogin/model/User.class
+com/example/springlogin/repository/UserRepository.class
+com/example/springlogin/repository/RoleRepository.class

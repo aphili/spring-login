@@ -1,0 +1,9 @@
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/service/UserService.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/repository/RoleRepository.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/controller/RegistrationController.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/model/Role.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/configuration/WebSecurityConfig.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/SpringLoginApplication.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/configuration/MvcConfig.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/repository/UserRepository.java
+/home/andrew/Apps/spring-login/src/main/java/com/example/springlogin/model/User.java
